@@ -9,7 +9,7 @@
 
 
     <script>
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,35 +23,28 @@
     </div>
     </body><script>
      
-function calculateChickenPrice(weight) {
-    // Convert input to numbers
-    weight = parseFloat(weight);
-    // Check if the input is valid
-    if (isNaN(weight)) {
-        return "Invalid Argument";
-    }
-    // Calculate the total price
-    var totalPrice = weight * 500;
-    // Return the total price
-    return totalPrice.toFixed(2); // Round to 2 decimal places
+     function promptForNumber(message) {
+    var input;
+    do {
+        input = prompt(message);
+        // Check if the input is not null and if it's a valid number
+        if (input === null || isNaN(input)) {
+            alert("Please enter a valid number.");
+        }
+    } while (input === null || isNaN(input));
+    return parseFloat(input);
 }
 
 // Example usage:
+var weight = promptForNumber("Enter the weight of chicken (in Kilogram):");
+
+document.write("Total Price of Chicken is:", weight*500);
 
 
-
-
-
-
-
-var weight = prompt("Enter the weight of chicken (in kilograms):");
-var totalPrice = calculateChickenPrice(weight);
-if (totalPrice === "Invalid input") {
-    alert("Invalid input. Please enter valid numbers.");
-} else {
-    //alert("Total price of chicken: $" + totalPrice);
-    document.write("Total price of chicken "+ totalPrice);
-}
+    </script>
+   
+</body>
+</html>
 
 
 
